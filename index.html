@@ -6,7 +6,73 @@
     <title>مبادرة رِباط التقنية</title>
     <link rel="icon" href="https://i.ibb.co/WNwSnQKM/photo-2025-08-04-19-43-23.jpg">
     <style>
-        body{background-color:#0d0d0d;color:#37588a;font-family:'Courier New',Courier,monospace;text-align:center;padding:2rem;margin:0;line-height:1.8;transition:background-color .3s ease}
+        /* أنماط Navbar الجديدة */
+        .navbar {
+            background-color: #0d0d0d;
+            border-bottom: 2px solid #37588a;
+            padding: 0.8rem 0;
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4b749e;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-item {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-link {
+            color: #4b749e;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+        
+        .nav-link:hover {
+            color: #e67e22;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+        }
+        
+        .hamburger span {
+            height: 3px;
+            width: 100%;
+            background-color: #4b749e;
+            transition: all 0.3s;
+        }
+        
+        /* الأنماط الحالية للصفحة */
+        body{background-color:#0d0d0d;color:#37588a;font-family:'Courier New',Courier,monospace;text-align:center;padding:0;margin:0;line-height:1.8;transition:background-color .3s ease}
         .container{max-width:800px;margin:0 auto;border:2px solid #37588a;padding:2rem;box-shadow:0 0 15px rgba(55,88,138,.2)}
         h1{font-size:2.5rem;color:#37588a;border-bottom:2px solid #e67e22;padding-bottom:.5rem;margin-bottom:2rem;display:inline-block}
         h1::after{content:'_';display:inline-block;animation:blink 1s step-end infinite;margin-right:.5rem;color:#4b749e}
@@ -24,18 +90,104 @@
         .toggle-btn:hover{background-color:#4b749e;color:#0d0d0d}
 
         .channel-description{max-height:0;overflow:hidden;transition:max-height .5s ease-in-out, padding-top .5s ease-in-out;color:rgba(255,255,255,0.7);padding-top:0;text-align:justify}
-        .channel-description.active{max-height:200px;padding-top:1rem} /* 200px is an estimated max height */
+        .channel-description.active{max-height:500px;padding-top:1rem} /* زيادة الارتفاع لاستيعاب المحتوى */
 
-        .special-link{display:block;margin:2rem 0;font-size:1.3rem;font-weight:700;color:#4b749e}
-        .special-link:hover{color:#e67e22}
+        /* تصميم جديد للرابط الخاص */
+        .special-link-box {
+            border: 1px solid #37588a;
+            margin-bottom: 1rem;
+            padding: 1.2rem;
+            transition: background-color .3s, border-color .3s;
+            text-align: center;
+        }
+        
+        .special-link-box:hover {
+            background-color: rgba(75,116,158,.1);
+            border-color: #4b749e;
+        }
+        
+        .special-link {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #4b749e;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .special-link:hover {
+            color: #e67e22;
+        }
 
         footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #37588a;font-size:1rem}
         footer a{color:#4b749e}
 
-        @media (max-width:600px){body{padding:1rem}.container{padding:1rem}h1{font-size:1.8rem}li,.special-link,p{font-size:1rem}.channel-header a{font-size:1.1rem}}
+        @media (max-width:600px){
+            body{padding:0}
+            .container{padding:1rem}
+            h1{font-size:1.8rem}
+            li,.special-link,p{font-size:1rem}
+            .channel-header a{font-size:1.1rem}
+            
+            /* أنماط Navbar للجوال */
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                right: -100%;
+                top: 60px;
+                flex-direction: column;
+                background-color: #0d0d0d;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+                padding: 1rem 0;
+                border-top: 1px solid #37588a;
+                border-left: 1px solid #37588a;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-item {
+                margin: 1rem 0;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- شريط التنقل الجديد -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">رِباط التقنية</a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#channels" class="nav-link">القنوات</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">عن المبادرة</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">اتصل بنا</a>
+                </li>
+            </ul>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
     <div class="container">
         <header>
@@ -45,11 +197,14 @@
         <main>
             <p>قائمة القنوات التقنية العربية على تليغرام:</p>
 
-            <a href="https://t.me/addlist/Gg-LFze5N89mMTJk" target="_blank" class="special-link">
-                اضغط هنا لإضافة القائمة كاملة
-            </a>
+            <!-- الرابط الخاص داخل صندوق -->
+            <div class="special-link-box">
+                <a href="https://t.me/addlist/Gg-LFze5N89mMTJk" target="_blank" class="special-link">
+                    اضغط هنا لإضافة القائمة كاملة
+                </a>
+            </div>
 
-            <ul>
+            <ul id="channels">
                 <li>
                     <div class="channel-header">
                         <a href="https://t.me/al_zanad" target="_blank">الزَّنَاد</a>
@@ -62,21 +217,21 @@
                         <a href="https://t.me/ysh_alsager" target="_blank">مُدَوَّنَة يُوسُف</a>
                         <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
                     </div>
-                    <div class="channel-description"><p></p></div>
+                    <div class="channel-description"><p>قناة أشارك فيها أمور تقنية ومواد نافعة على الإنترنت وتحديثات مشاريعي وكتاباتي وأشياء أخرى.<br><br>من أنا؟<br>مسلم - مطور برمجيات - محرر تقني</p></div>
                 </li>
                 <li>
                     <div class="channel-header">
                         <a href="https://t.me/GenICes" target="_blank">Gen𓂆Ces</a>
                         <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
                     </div>
-                    <div class="channel-description"><p></p></div>
+                    <div class="channel-description"><p>ثقافة برمجية بحته، ومصادر تعليمية باللغة العربية.</p></div>
                 </li>
                 <li>
                     <div class="channel-header">
                         <a href="https://t.me/ONb10g" target="_blank">مدونة أُن</a>
                         <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
                     </div>
-                    <div class="channel-description"><p></p></div>
+                    <div class="channel-description"><p>السلام عليكم ورحمة الله 👋<br><br>⬅️ القناة رقعة خاصة بـشارك فيها صور وفيديوهات وأفكار تقنية وبرامج وحاجات مفيدة غالبا بحتاجها بمعني نحاول في القناة رفع الجهل التقني.<br><br>⬅️ انا مش صانع محتوي عشان كده مش مهتم بالريتش أوي لكن ده لا يمنع اني أحاول اوصل للناس لان كل حاجة بنشرها تعبت عشان اوصل لها فـ انا هوفر عليك عناء البحث ان شاء الله ❤️<br><br>⬅️ القناة عامة بمعني انك مش لازم تشترك في القناة عشان تشوف اللي فيها لذلك ممكن تحتفظ باليوزرنيم عندك.<br><br>⬅️ سواء عامل ميوت للقناة أو لا فـ أي رسالة هنا بتتبعت من غير ما تعمل صوت إشعار عندك في التليفون ومجرد انك تتصفح القناة كل فترة تشوف لو نزلنا شئ مفيد ده يفرحنا.<br><br>⬅️ أي رسالة هنا مسموح بنقلها بشرط ألا تستعمل في معصية.<br>يفضل ذكر المصدر حال النقل.</p></div>
                 </li>
                 <li>
                     <div class="channel-header">
@@ -104,14 +259,14 @@
                         <a href="https://t.me/mohcinspacesoftware" target="_blank">Mohcin Bounouara's Space</a>
                         <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
                     </div>
-                    <div class="channel-description"><p></p></div>
+                    <div class="channel-description"><p>{فَأَمَّا الزَّبَدُ فَيَذْهَبُ جُفَاءً ۖ وَأَمَّا مَا يَنفَعُ النَّاسَ فَيَمكُثُ فِي الْأَرْضِ} [الرعد: 17]<br><br>خواطر في الدين و الدنيا و هندسة البرمجيات في محاولة لإصلاح نفسي ولعلني اجعل لنفسي أثرا في إصلاح الاخرين.. على قلتهم، لعلنا نلقى الله بهذا.</p></div>
                 </li>
                 <li>
                     <div class="channel-header">
                         <a href="https://t.me/hassenzouzou" target="_blank">حسان زوزو</a>
                         <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
                     </div>
-                    <div class="channel-description"><p></p></div>
+                    <div class="channel-description"><p>قناة تقنية أشارك فيها كل ما أراه مفيدًا في عالم التكنولوجيا، لتكون مرجعًا وملاذًا لكل من يرغب في دخول هذا المجال واستكشافه بعمق…</p></div>
                 </li>
                 <li>
                     <div class="channel-header">
@@ -125,12 +280,19 @@
                         <a href="https://t.me/Mahmoud_Nasredeen" target="_blank">محمود نصر الدين 🇵🇸</a>
                         <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
                     </div>
-                    <div class="channel-description"><p></p></div>
+                    <div class="channel-description"><p>﴿فَأَمَّا الزَّبَدُ فَيَذهَبُ جُفاءً وَأَمّا ما يَنفَعُ النّاسَ فَيَمكُثُ فِي الأَرضِ﴾<br><br>محتوى عن التقنية والإنتاجية وأشياء أخرى</p></div>
                 </li>
             </ul>
+            
+            <section id="about" style="margin-top: 3rem; text-align: right;">
+                <h2 style="border-bottom: 2px solid #e67e22; padding-bottom: 0.5rem; display: inline-block;">عن المبادرة</h2>
+                <p style="color: rgba(255,255,255,0.7); text-align: justify; margin-top: 1rem;">
+                    مبادرة رباط التقنية هي مبادرة عربية تهدف إلى جمع القنوات التقنية المتميزة تحت مظلة واحدة، لتسهيل الوصول إليها وتعزيز المحتوى التقني العربي. نسعى من خلال هذه المبادرة إلى خلق مجتمع تقني عربي متماسك يثرى بعضه بعضًا.
+                </p>
+            </section>
         </main>
 
-        <footer>
+        <footer id="contact">
             <p>للانضمام إلى المبادرة أو للاستفسار، تواصل مع المنسق:</p>
             <a href="https://t.me/alzaanad" target="_blank">@alzaanad</a>
         </footer>
@@ -138,20 +300,37 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // كود التبديل الأصلي للقنوات
             const toggleButtons = document.querySelectorAll('.toggle-btn');
             toggleButtons.forEach(button => {
-                // Allow clicking the button or the entire header to toggle
                 const header = button.parentElement;
                 header.addEventListener('click', function () {
                     const description = this.nextElementSibling;
                     description.classList.toggle('active');
                     if (description.classList.contains('active')) {
-                        button.textContent = '−'; // Minus sign
+                        button.textContent = '−';
                         button.setAttribute('aria-label', 'إخفاء الوصف');
                     } else {
                         button.textContent = '+';
                         button.setAttribute('aria-label', 'إظهار الوصف');
                     }
+                });
+            });
+            
+            // كود جديد للـ navbar في الجوال
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            
+            // إغلاق القائمة عند النقر على رابط
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
                 });
             });
         });
