@@ -1,177 +1,109 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- البيانات الوصفية الأساسية -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مبادرة رِباط التقنية</title>
-    <link rel="icon" href="https://i.ibb.co/WNwSnQKM/photo-2025-08-04-19-43-23.jpg">
-    <style>
-        /* أنماط Navbar الجديدة */
-        .navbar {
-            background-color: #0d0d0d;
-            border-bottom: 2px solid #37588a;
-            padding: 0.8rem 0;
-            margin-bottom: 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- العنوان والوصف الأساسي -->
+    <title>مبادرة رِباط التقنية | دليل شامل للقنوات التقنية العربية الملتزمة على تليغرام</title>
+    <meta name="description" content="دليل شامل يجمع أفضل القنوات التقنية العربية الملتزمة على تليغرام. محتوى تقني حصري في البرمجة، التطوير، الأمن السيبراني، والتقنيات الحديثة باللغة العربية الفصحى.">
+    <meta name="keywords" content="قنوات تقنية عربية, تليغرام, برمجة عربية, تطوير ويب, أمن سيبراني, ذكاء اصطناعي, محتوى تقني عربي, مبرمجين عرب, قنوات برمجة, تعلم البرمجة بالعربية">
+    <meta name="author" content="مبادرة رِباط التقنية">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="Arabic">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alzanad.github.io/ribat-altaqniyyah/">
+    
+    <!-- أيقونات متعددة الأحجام -->
+    <link rel="icon" type="image/jpeg" href="https://i.ibb.co/WNwSnQKM/photo-2025-08-04-19-43-23.jpg">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/WNwSnQKM/photo-2025-08-04-19-43-23.jpg">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alzanad.github.io/ribat-altaqniyyah/">
+    <meta property="og:title" content="مبادرة رِباط التقنية | دليل القنوات التقنية العربية">
+    <meta property="og:description" content="دليل شامل يجمع أفضل القنوات التقنية العربية الملتزمة على تليغرام. محتوى تقني حصري باللغة العربية.">
+    <meta property="og:image" content="https://i.ibb.co/WNwSnQKM/photo-2025-08-04-19-43-23.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ar_SA">
+    <meta property="og:site_name" content="مبادرة رِباط التقنية">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://alzanad.github.io/ribat-altaqniyyah/">
+    <meta name="twitter:title" content="مبادرة رِباط التقنية | دليل القنوات التقنية العربية">
+    <meta name="twitter:description" content="دليل شامل يجمع أفضل القنوات التقنية العربية الملتزمة على تليغرام.">
+    <meta name="twitter:image" content="https://i.ibb.co/WNwSnQKM/photo-2025-08-04-19-43-23.jpg">
+    
+    <!-- Schema.org Markup للبحث المنظم -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "مبادرة رِباط التقنية",
+      "url": "https://alzanad.github.io/ribat-altaqniyyah/",
+      "description": "دليل شامل للقنوات التقنية العربية الملتزمة على تليغرام",
+      "inLanguage": "ar",
+      "publisher": {
+        "@type": "Organization",
+        "name": "مبادرة رِباط التقنية",
+        "url": "https://alzanad.github.io/ribat-altaqniyyah/"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://alzanad.github.io/ribat-altaqniyyah/#channels?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "قائمة القنوات التقنية العربية",
+      "description": "مجموعة مختارة من القنوات التقنية العربية الملتزمة",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Organization",
+            "name": "الزَّنَاد",
+            "url": "https://t.me/al_zanad",
+            "description": "قناة تقنية عربية تهدف إلى إثراء المحتوى العربي في مجالات التقنية المتقدمة"
+          }
         }
-        
-        .nav-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 1rem;
-        }
-        
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #4b749e;
-            text-decoration: none;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .nav-item {
-            margin-left: 1.5rem;
-        }
-        
-        .nav-link {
-            color: #4b749e;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 1rem;
-        }
-        
-        .nav-link:hover {
-            color: #e67e22;
-        }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 30px;
-            height: 25px;
-        }
-        
-        .hamburger span {
-            height: 3px;
-            width: 100%;
-            background-color: #4b749e;
-            transition: all 0.3s;
-        }
-        
-        /* الأنماط الحالية للصفحة */
-        body{background-color:#0d0d0d;color:#37588a;font-family:'Courier New',Courier,monospace;text-align:center;padding:0;margin:0;line-height:1.8;transition:background-color .3s ease}
-        .container{max-width:800px;margin:0 auto;border:2px solid #37588a;padding:2rem;box-shadow:0 0 15px rgba(55,88,138,.2)}
-        h1{font-size:2.5rem;color:#37588a;border-bottom:2px solid #e67e22;padding-bottom:.5rem;margin-bottom:2rem;display:inline-block}
-        h1::after{content:'_';display:inline-block;animation:blink 1s step-end infinite;margin-right:.5rem;color:#4b749e}
-        @keyframes blink{50%{color:transparent}}
-
-        ul{list-style:none;padding:0;text-align:right}
-        li{border:1px solid #37588a;margin-bottom:1rem;padding:.8rem;transition:background-color .3s, border-color .3s}
-        li:hover{background-color:rgba(75,116,158,.1);border-color:#4b749e}
-
-        .channel-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
-        .channel-header a{color:#4b749e;text-decoration:none;font-size:1.3rem;transition:color .3s}
-        .channel-header a:hover{color:#e67e22}
-
-        .toggle-btn{background:none;border:1px solid #4b749e;color:#4b749e;font-size:1.5rem;width:30px;height:30px;line-height:30px;text-align:center;padding:0;cursor:pointer;transition:background-color .3s, color .3s}
-        .toggle-btn:hover{background-color:#4b749e;color:#0d0d0d}
-
-        .channel-description{max-height:0;overflow:hidden;transition:max-height .5s ease-in-out, padding-top .5s ease-in-out;color:rgba(255,255,255,0.7);padding-top:0;text-align:justify}
-        .channel-description.active{max-height:500px;padding-top:1rem} /* زيادة الارتفاع لاستيعاب المحتوى */
-
-        /* تصميم جديد للرابط الخاص */
-        .special-link-box {
-            border: 1px solid #37588a;
-            margin-bottom: 1rem;
-            padding: 1.2rem;
-            transition: background-color .3s, border-color .3s;
-            text-align: center;
-        }
-        
-        .special-link-box:hover {
-            background-color: rgba(75,116,158,.1);
-            border-color: #4b749e;
-        }
-        
-        .special-link {
-            display: block;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #4b749e;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .special-link:hover {
-            color: #e67e22;
-        }
-
-        footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #37588a;font-size:1rem}
-        footer a{color:#4b749e}
-
-        @media (max-width:600px){
-            body{padding:0}
-            .container{padding:1rem}
-            h1{font-size:1.8rem}
-            li,.special-link,p{font-size:1rem}
-            .channel-header a{font-size:1.1rem}
-            
-            /* أنماط Navbar للجوال */
-            .hamburger {
-                display: flex;
-            }
-            
-            .nav-menu {
-                position: fixed;
-                right: -100%;
-                top: 60px;
-                flex-direction: column;
-                background-color: #0d0d0d;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-                padding: 1rem 0;
-                border-top: 1px solid #37588a;
-                border-left: 1px solid #37588a;
-            }
-            
-            .nav-menu.active {
-                right: 0;
-            }
-            
-            .nav-item {
-                margin: 1rem 0;
-            }
-        }
-    </style>
+      ]
+    }
+    </script>
+    
+    <!-- ملف الأنماط الخارجي (Separation of Concerns) -->
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 
-    <!-- شريط التنقل الجديد -->
-    <nav class="navbar">
+    <!-- شريط التنقل -->
+    <nav class="navbar" role="navigation" aria-label="التنقل الرئيسي">
         <div class="nav-container">
-            <a href="#" class="nav-logo">رِباط التقنية</a>
+            <!-- الشعار -->
+            <a href="#" class="nav-logo" aria-label="الصفحة الرئيسية">رِباط التقنية</a>
             
+            <!-- قائمة التنقل -->
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">الرئيسية</a>
+                    <a href="#hero" class="nav-link">الرئيسية</a>
                 </li>
                 <li class="nav-item">
                     <a href="#channels" class="nav-link">القنوات</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#conditions" class="nav-link">شروط الانضمام</a>
                 </li>
                 <li class="nav-item">
                     <a href="#about" class="nav-link">عن المبادرة</a>
@@ -181,7 +113,8 @@
                 </li>
             </ul>
             
-            <div class="hamburger">
+            <!-- زر قائمة الجوال -->
+            <div class="hamburger" role="button" aria-label="قائمة التنقل" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -189,167 +122,382 @@
         </div>
     </nav>
 
+    <!-- الحاوية الرئيسية -->
     <div class="container">
-        <header>
-            <h1>مبادرة رباط التقنية</h1>
+        
+        <!-- القسم البطولي (Hero) -->
+        <header class="hero" id="hero">
+            <h1 class="hero-title">مبادرة رِباط التقنية</h1>
+            <p class="hero-subtitle">
+                ملتقى القنوات التقنية العربية الملتزمة على تليغرام
+            </p>
         </header>
 
+        <!-- المحتوى الرئيسي -->
         <main>
-            <p>قائمة القنوات التقنية العربية على تليغرام:</p>
-
-            <!-- الرابط الخاص داخل صندوق -->
-            <div class="special-link-box">
-                <a href="https://t.me/addlist/Gg-LFze5N89mMTJk" target="_blank" class="special-link">
-                    اضغط هنا لإضافة القائمة كاملة
+            
+            <!-- الرابط المميز لإضافة جميع القنوات -->
+            <div class="special-link-container">
+                <a href="https://t.me/addlist/Gg-LFze5N89mMTJk" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="special-link"
+                   aria-label="إضافة جميع القنوات دفعة واحدة">
+                    اضغط هنا لإضافة القائمة كاملة دفعة واحدة
                 </a>
             </div>
 
-            <ul id="channels">
-                <li>
-                    <div class="channel-header">
-                        <a href="https://t.me/al_zanad" target="_blank">الزَّنَاد</a>
-                        <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
-                    </div>
-                    <div class="channel-description"><p>الزَّنَاد هي قناة تقنية عربية، تهدف إلى إثراء المحتوى العربي في مجالات التقنية المتقدمة، مع التركيز على تمكين المستخدم العربي بالأدوات والمعرفة اللازمة في العصر الرقمي. تتميز القناة بتقديم محتوى فريد وعميق، يمزج الرؤى التقنية المتقدمة بالتطبيقات العملية.</p></div>
-                </li>
-                <li>
-                    <div class="channel-header">
-                        <a href="https://t.me/ysh_alsager" target="_blank">مُدَوَّنَة يُوسُف</a>
-                        <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
-                    </div>
-                    <div class="channel-description"><p>قناة أشارك فيها أمور تقنية ومواد نافعة على الإنترنت وتحديثات مشاريعي وكتاباتي وأشياء أخرى.<br><br>من أنا؟<br>مسلم - مطور برمجيات - محرر تقني</p></div>
-                </li>
-                <li>
-                    <div class="channel-header">
-                        <a href="https://t.me/GenICes" target="_blank">Gen𓂆Ces</a>
-                        <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
-                    </div>
-                    <div class="channel-description"><p>ثقافة برمجية بحته، ومصادر تعليمية باللغة العربية.</p></div>
-                </li>
-                <li>
-                    <div class="channel-header">
-                        <a href="https://t.me/ONb10g" target="_blank">مدونة أُن</a>
-                        <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
-                    </div>
-                    <div class="channel-description"><p>مقهى سيبريا نادٍ من نوادي التقانة، لا يُسمع فيه غير الحديث عن الآلة، وقد جعلناه في كل أمرٍ من أمور التحسيب، من نظمٍ وأمنٍ وصناعةٍ وهلم جرًا؛ فمرّةً نشرح مفهومًا أُهمل ذكره أو لم يفطن إلى ما تحته، ومرّةً نعرض للرائج الجديد وما وراءه من قصدٍ أو مكر، كما نقصّ قصصًا فيها الحكمة واللهو، ولا تخلو من عبرةٍ وعظةٍ، وكل ذلك بلسانٍ عربيٍّ فصيحٍ، نقيٍّ من ركاكة العجم، سليمٍ من سخافاتهم.</p></div>
-                </li>
-                <li>
-                    <div class="channel-header">
-                        <a href="https://t.me/sunni_tech" target="_blank">مستودع تقني</a>
-                        <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
-                    </div>
-                    <div class="channel-description"><p>قناة تقنية مخصصة لأهل السنة، لمشاركة التطبيقات والأدوات المفيدة.</p></div>
-                </li>
-                <li>
-                    <div class="channel-header">
-                        <a href="https://t.me/almuhanad_tech" target="_blank">المهند - مساحة تقنية</a>
-                        <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
-                    </div>
-                    <div class="channel-description"><p>مهندس برمجيات ومطور ويب متكامل شغوف بالتقنية.</p></div>
-                </li>
-                <li>
-                    <div class="channel-header">
-                        <a href="https://t.me/programmerskhan" target="_blank">خان المُبرمجين (علي فاضل)</a>
-                        <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
-                    </div>
-                    <div class="channel-description"><p>قناة أنشر فيها ما أتعلمه خلال عملي على مشاريعي الخاصة.</p></div>
-                </li>
-                <li>
-                    <div class="channel-header">
-                        <a href="https://t.me/mohcinspacesoftware" target="_blank">Mohcin Bounouara's Space</a>
-                        <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
-                    </div>
-                    <div class="channel-description"><p>{فَأَمَّا الزَّبَدُ فَيَذْهَبُ جُفَاءً ۖ وَأَمَّا مَا يَنفَعُ النَّاسَ فَيَمكُثُ فِي الْأَرْضِ} [الرعد: 17]<br><br>خواطر في الدين و الدنيا و هندسة البرمجيات في محاولة لإصلاح نفسي ولعلني اجعل لنفسي أثرا في إصلاح الاخرين.. على قلتهم، لعلنا نلقى الله بهذا.</p></div>
-                </li>
-                <li>
-                    <div class="channel-header">
-                        <a href="https://t.me/hassenzouzou" target="_blank">حسان زوزو</a>
-                        <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
-                    </div>
-                    <div class="channel-description"><p>قناة تقنية أشارك فيها كل ما أراه مفيدًا في عالم التكنولوجيا، لتكون مرجعًا وملاذًا لكل من يرغب في دخول هذا المجال واستكشافه بعمق…</p></div>
-                </li>
-                <li>
-                    <div class="channel-header">
-                        <a href="https://t.me/AsemNajee" target="_blank">عاصم آل ناجي</a>
-                        <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
-                    </div>
-                    <div class="channel-description"><p>ثقافة برمجية بحته ، ومصادر تعليمية باللغة العربية.</p></div>
-                </li>
-                <li>
-                    <div class="channel-header">
-                        <a href="https://t.me/Mahmoud_Nasredeen" target="_blank">محمود نصر الدين 🇵🇸</a>
-                        <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
-                    </div>
-                    <div class="channel-description"><p>﴿فَأَمَّا الزَّبَدُ فَيَذهَبُ جُفاءً وَأَمّا ما يَنفَعُ النّاسَ فَيَمكُثُ فِي الأَرضِ﴾<br><br>محتوى عن التقنية والإنتاجية وأشياء أخرى</p></div>
-                </li>
-                <li>
-                    <div class="channel-header">
-                        <a href="https://t.me/DopaCode" target="_blank">دوبــاكــود</a>
-                        <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
-                    </div>
-                    <div class="channel-description"><p>قناة تشارك أدوات ومصادر تعليمية مجانية، شروحات مبسّطة، أفكار تقنية جديدة، تحديات محفزة، ومقالات برمجية بلغة سهلة وقريبة.</p></div>
-                </li>
-                <li>
-                    <div class="channel-header">
-                        <a href="https://t.me/TaizSoft" target="_blank">هـكتُور</a>
-                        <button class="toggle-btn" aria-label="إظهار الوصف">+</button>
-                    </div>
-                    <div class="channel-description"><p>نواكب أحدث تطورات التكنولوجيا، ونغوص في عالم البرمجة من خلال شروحات مبسطة للغات البرمجة، ومعلومات تقنية قيّمة، واستعراض لأدوات العاقول التي تسهّل حياتك وتطوّر مهاراتك.</p></div>
-                </li>
+            <!-- قسم القنوات -->
+            <section class="channels-section" id="channels">
+                <h2 class="section-title">قائمة القنوات التقنية</h2>
+                
+                <ul class="channels-list">
+                    <!-- قناة الزَّنَاد -->
+                    <li class="channel-card">
+                        <div class="channel-header">
+                            <a href="https://t.me/al_zanad" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="channel-link">
+                                الزَّنَاد
+                            </a>
+                            <button class="toggle-btn" 
+                                    aria-label="إظهار الوصف"
+                                    aria-expanded="false">
+                                +
+                            </button>
+                        </div>
+                        <div class="channel-description">
+                            <p>الزَّنَاد هي قناة تقنية عربية، تهدف إلى إثراء المحتوى العربي في مجالات التقنية المتقدمة، مع التركيز على تمكين المستخدم العربي بالأدوات والمعرفة اللازمة في العصر الرقمي. تتميز القناة بتقديم محتوى فريد وعميق، يمزج الرؤى التقنية المتقدمة بالتطبيقات العملية.</p>
+                        </div>
+                    </li>
 
-            </ul>
-            
-            <section id="about" style="margin-top: 3rem; text-align: right;">
-                <h2 style="border-bottom: 2px solid #e67e22; padding-bottom: 0.5rem; display: inline-block;">عن المبادرة</h2>
-                <p style="color: rgba(255,255,255,0.7); text-align: justify; margin-top: 1rem;">
-                    مبادرة رباط التقنية هي مبادرة عربية تهدف إلى جمع القنوات التقنية المتميزة تحت مظلة واحدة، لتسهيل الوصول إليها وتعزيز المحتوى التقني العربي. نسعى من خلال هذه المبادرة إلى خلق مجتمع تقني عربي متماسك يثرى بعضه بعضًا.
+                    <!-- قناة مُدَوَّنَة يُوسُف -->
+                    <li class="channel-card">
+                        <div class="channel-header">
+                            <a href="https://t.me/ysh_alsager" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="channel-link">
+                                مُدَوَّنَة يُوسُف
+                            </a>
+                            <button class="toggle-btn" 
+                                    aria-label="إظهار الوصف"
+                                    aria-expanded="false">
+                                +
+                            </button>
+                        </div>
+                        <div class="channel-description">
+                            <p>قناة أشارك فيها أمور تقنية ومواد نافعة على الإنترنت وتحديثات مشاريعي وكتاباتي وأشياء أخرى.</p>
+                            <p><strong>من أنا؟</strong> مسلم - مطور برمجيات - محرر تقني</p>
+                        </div>
+                    </li>
+
+                    <!-- قناة Gen𓂆Ces -->
+                    <li class="channel-card">
+                        <div class="channel-header">
+                            <a href="https://t.me/GenICes" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="channel-link">
+                                Gen𓂆Ces
+                            </a>
+                            <button class="toggle-btn" 
+                                    aria-label="إظهار الوصف"
+                                    aria-expanded="false">
+                                +
+                            </button>
+                        </div>
+                        <div class="channel-description">
+                            <p>ثقافة برمجية بحته، ومصادر تعليمية باللغة العربية.</p>
+                        </div>
+                    </li>
+
+                    <!-- قناة مدونة أُن -->
+                    <li class="channel-card">
+                        <div class="channel-header">
+                            <a href="https://t.me/ONb10g" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="channel-link">
+                                مدونة أُن
+                            </a>
+                            <button class="toggle-btn" 
+                                    aria-label="إظهار الوصف"
+                                    aria-expanded="false">
+                                +
+                            </button>
+                        </div>
+                        <div class="channel-description">
+                            <p>مقهى سيبريا نادٍ من نوادي التقانة، لا يُسمع فيه غير الحديث عن الآلة، وقد جعلناه في كل أمرٍ من أمور التحسيب، من نظمٍ وأمنٍ وصناعةٍ وهلم جرًا؛ فمرّةً نشرح مفهومًا أُهمل ذكره أو لم يفطن إلى ما تحته، ومرّةً نعرض للرائج الجديد وما وراءه من قصدٍ أو مكر، كما نقصّ قصصًا فيها الحكمة واللهو، ولا تخلو من عبرةٍ وعظةٍ، وكل ذلك بلسانٍ عربيٍّ فصيحٍ، نقيٍّ من ركاكة العجم، سليمٍ من سخافاتهم.</p>
+                        </div>
+                    </li>
+
+                    <!-- قناة مستودع تقني -->
+                    <li class="channel-card">
+                        <div class="channel-header">
+                            <a href="https://t.me/sunni_tech" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="channel-link">
+                                مستودع تقني
+                            </a>
+                            <button class="toggle-btn" 
+                                    aria-label="إظهار الوصف"
+                                    aria-expanded="false">
+                                +
+                            </button>
+                        </div>
+                        <div class="channel-description">
+                            <p>قناة تقنية مخصصة لأهل السنة، لمشاركة التطبيقات والأدوات المفيدة.</p>
+                        </div>
+                    </li>
+
+                    <!-- قناة المهند -->
+                    <li class="channel-card">
+                        <div class="channel-header">
+                            <a href="https://t.me/almuhanad_tech" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="channel-link">
+                                المهند - مساحة تقنية
+                            </a>
+                            <button class="toggle-btn" 
+                                    aria-label="إظهار الوصف"
+                                    aria-expanded="false">
+                                +
+                            </button>
+                        </div>
+                        <div class="channel-description">
+                            <p>مهندس برمجيات ومطور ويب متكامل شغوف بالتقنية.</p>
+                        </div>
+                    </li>
+
+                    <!-- قناة خان المُبرمجين -->
+                    <li class="channel-card">
+                        <div class="channel-header">
+                            <a href="https://t.me/programmerskhan" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="channel-link">
+                                خان المُبرمجين (علي فاضل)
+                            </a>
+                            <button class="toggle-btn" 
+                                    aria-label="إظهار الوصف"
+                                    aria-expanded="false">
+                                +
+                            </button>
+                        </div>
+                        <div class="channel-description">
+                            <p>قناة أنشر فيها ما أتعلمه خلال عملي على مشاريعي الخاصة.</p>
+                        </div>
+                    </li>
+
+                    <!-- قناة Mohcin Bounouara's Space -->
+                    <li class="channel-card">
+                        <div class="channel-header">
+                            <a href="https://t.me/mohcinspacesoftware" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="channel-link">
+                                Mohcin Bounouara's Space
+                            </a>
+                            <button class="toggle-btn" 
+                                    aria-label="إظهار الوصف"
+                                    aria-expanded="false">
+                                +
+                            </button>
+                        </div>
+                        <div class="channel-description">
+                            <p><em>{فَأَمَّا الزَّبَدُ فَيَذْهَبُ جُفَاءً ۖ وَأَمَّا مَا يَنفَعُ النَّاسَ فَيَمكُثُ فِي الْأَرْضِ}</em> [الرعد: 17]</p>
+                            <p>خواطر في الدين و الدنيا و هندسة البرمجيات في محاولة لإصلاح نفسي ولعلني اجعل لنفسي أثرا في إصلاح الاخرين.. على قلتهم، لعلنا نلقى الله بهذا.</p>
+                        </div>
+                    </li>
+
+                    <!-- قناة حسان زوزو -->
+                    <li class="channel-card">
+                        <div class="channel-header">
+                            <a href="https://t.me/hassenzouzou" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="channel-link">
+                                حسان زوزو
+                            </a>
+                            <button class="toggle-btn" 
+                                    aria-label="إظهار الوصف"
+                                    aria-expanded="false">
+                                +
+                            </button>
+                        </div>
+                        <div class="channel-description">
+                            <p>قناة تقنية أشارك فيها كل ما أراه مفيدًا في عالم التكنولوجيا، لتكون مرجعًا وملاذًا لكل من يرغب في دخول هذا المجال واستكشافه بعمق…</p>
+                        </div>
+                    </li>
+
+                    <!-- قناة عاصم آل ناجي -->
+                    <li class="channel-card">
+                        <div class="channel-header">
+                            <a href="https://t.me/AsemNajee" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="channel-link">
+                                عاصم آل ناجي
+                            </a>
+                            <button class="toggle-btn" 
+                                    aria-label="إظهار الوصف"
+                                    aria-expanded="false">
+                                +
+                            </button>
+                        </div>
+                        <div class="channel-description">
+                            <p>ثقافة برمجية بحته، ومصادر تعليمية باللغة العربية.</p>
+                        </div>
+                    </li>
+
+                    <!-- قناة محمود نصر الدين -->
+                    <li class="channel-card">
+                        <div class="channel-header">
+                            <a href="https://t.me/Mahmoud_Nasredeen" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="channel-link">
+                                محمود نصر الدين 🇵🇸
+                            </a>
+                            <button class="toggle-btn" 
+                                    aria-label="إظهار الوصف"
+                                    aria-expanded="false">
+                                +
+                            </button>
+                        </div>
+                        <div class="channel-description">
+                            <p><em>﴿فَأَمَّا الزَّبَدُ فَيَذهَبُ جُفاءً وَأَمّا ما يَنفَعُ النّاسَ فَيَمكُثُ فِي الأَرضِ﴾</em></p>
+                            <p>محتوى عن التقنية والإنتاجية وأشياء أخرى</p>
+                        </div>
+                    </li>
+
+                    <!-- قناة دوبــاكــود -->
+                    <li class="channel-card">
+                        <div class="channel-header">
+                            <a href="https://t.me/DopaCode" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="channel-link">
+                                دوبــاكــود
+                            </a>
+                            <button class="toggle-btn" 
+                                    aria-label="إظهار الوصف"
+                                    aria-expanded="false">
+                                +
+                            </button>
+                        </div>
+                        <div class="channel-description">
+                            <p>قناة تشارك أدوات ومصادر تعليمية مجانية، شروحات مبسّطة، أفكار تقنية جديدة، تحديات محفزة، ومقالات برمجية بلغة سهلة وقريبة.</p>
+                        </div>
+                    </li>
+
+                    <!-- قناة هـكتُور -->
+                    <li class="channel-card">
+                        <div class="channel-header">
+                            <a href="https://t.me/TaizSoft" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="channel-link">
+                                هـكتُور
+                            </a>
+                            <button class="toggle-btn" 
+                                    aria-label="إظهار الوصف"
+                                    aria-expanded="false">
+                                +
+                            </button>
+                        </div>
+                        <div class="channel-description">
+                            <p>نواكب أحدث تطورات التكنولوجيا، ونغوص في عالم البرمجة من خلال شروحات مبسطة للغات البرمجة، ومعلومات تقنية قيّمة، واستعراض لأدوات العاقول التي تسهّل حياتك وتطوّر مهاراتك.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- قسم شروط الانضمام الجديد -->
+            <section class="conditions-section" id="conditions">
+                <h2 class="section-title">شروط الانضمام إلى مبادرة رِباط التقنية</h2>
+                
+                <ol class="conditions-list">
+                    <li class="condition-item">
+                        <span class="condition-number">1.</span>
+                        <div class="condition-text">
+                            <strong>الطابع التقني الصِّرف:</strong> أن تكون القناة معنية بالمحتوى التقني (شروحات، مقالات، أخبار، أدوات، برمجيات، إلخ)، وألا يطغى عليها غير ذلك.
+                        </div>
+                    </li>
+                    
+                    <li class="condition-item">
+                        <span class="condition-number">2.</span>
+                        <div class="condition-text">
+                            <strong>المحتوى الحصري:</strong> أن يُقدَّم المحتوى بأسلوب خاصّ أو جهدٍ ذاتي، بعيدًا عن النقل الأجوف أو النسخ المباشر.
+                        </div>
+                    </li>
+                    
+                    <li class="condition-item">
+                        <span class="condition-number">3.</span>
+                        <div class="condition-text">
+                            <strong>الالتزام الشرعي والأخلاقي:</strong> أن يكون الطرح خاليًا من الموسيقى، وصور النساء، وما يخالف الذوق الرفيع أو القيم الإسلامية.
+                        </div>
+                    </li>
+                    
+                    <li class="condition-item">
+                        <span class="condition-number">4.</span>
+                        <div class="condition-text">
+                            <strong>اللغة العربية:</strong> أن يكون المحتوى باللغة العربية أساسًا، ولو جاز إدخال مصطلحات تقنية باللغات الأخرى عند الحاجة.
+                        </div>
+                    </li>
+                    
+                    <li class="condition-item">
+                        <span class="condition-number">5.</span>
+                        <div class="condition-text">
+                            <strong>الجدّية والمصداقية:</strong> أن تكون القناة بعيدة عن الدعايات التجارية الصِّرفة أو المحتويات المضللة.
+                        </div>
+                    </li>
+                    
+                    <li class="condition-item">
+                        <span class="condition-number">6.</span>
+                        <div class="condition-text">
+                            <strong>حدّ أدنى للمتابعين:</strong> لا يُقبل الانضمام إلا للقنوات التي تجاوز عدد مشتركيها (100) متابع، دليلًا على حيوية القناة.
+                        </div>
+                    </li>
+                    
+                    <li class="condition-item">
+                        <span class="condition-number">7.</span>
+                        <div class="condition-text">
+                            <strong>النشاط المنتظم:</strong> أن لا تكون القناة مهجورة؛ يُشترط نشر محتوى حديث خلال الأشهر الثلاثة الأخيرة على الأقل.
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- قسم عن المبادرة -->
+            <section class="about-section" id="about">
+                <h2 class="section-title">عن المبادرة</h2>
+                <p>
+                    مبادرة رباط التقنية هي مبادرة عربية تهدف إلى جمع القنوات التقنية المتميزة تحت مظلة واحدة، لتسهيل الوصول إليها وتعزيز المحتوى التقني العربي الملتزم. نسعى من خلال هذه المبادرة إلى خلق مجتمع تقني عربي متماسك يثرى بعضه بعضًا، ويرتقي بمستوى المحتوى التقني العربي إلى آفاق جديدة.
                 </p>
             </section>
+
         </main>
 
-        <footer id="contact">
+        <!-- التذييل -->
+        <footer class="footer" id="contact">
             <p>للانضمام إلى المبادرة أو للاستفسار، تواصل مع المنسق:</p>
-            <a href="https://t.me/alzaanad" target="_blank">@alzaanad</a>
+            <a href="https://t.me/alzaanad" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="التواصل مع المنسق عبر تليغرام">
+                @alzaanad
+            </a>
         </footer>
+
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // كود التبديل الأصلي للقنوات
-            const toggleButtons = document.querySelectorAll('.toggle-btn');
-            toggleButtons.forEach(button => {
-                const header = button.parentElement;
-                header.addEventListener('click', function () {
-                    const description = this.nextElementSibling;
-                    description.classList.toggle('active');
-                    if (description.classList.contains('active')) {
-                        button.textContent = '−';
-                        button.setAttribute('aria-label', 'إخفاء الوصف');
-                    } else {
-                        button.textContent = '+';
-                        button.setAttribute('aria-label', 'إظهار الوصف');
-                    }
-                });
-            });
-            
-            // كود جديد للـ navbar في الجوال
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            hamburger.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                hamburger.classList.toggle('active');
-            });
-            
-            // إغلاق القائمة عند النقر على رابط
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
-                });
-            });
-        });
-    </script>
+    <!-- ملف JavaScript الخارجي (Separation of Concerns) -->
+    <script src="assets/js/app.js"></script>
 
 </body>
 </html>
