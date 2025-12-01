@@ -1,11 +1,173 @@
 /**
  * سكريبت التطبيق الرئيسي لمبادرة رِباط التقنية
- * المسؤوليات: إدارة التفاعلية، التنقل، والتأثيرات البصرية
+ * المسؤوليات: إدارة التفاعلية، التنقل، السيو الديناميكي، وعرض بيانات القنوات
  * المبادئ المُتّبعة: Single Responsibility، DRY، Event Delegation
  */
 
 (function() {
     'use strict';
+
+    /**
+     * وحدة السيو الديناميكي (Dynamic SEO Module)
+     * المسؤولية: توليد وحقن بيانات JSON-LD من الإعدادات المركزية
+     */
+    const DynamicSEO = {
+        init() {
+            if (typeof SEO_CONFIG === 'undefined' || typeof CHANNELS_DATA === 'undefined') {
+                return;
+            }
+            
+            this.injectSchemaMarkup();
+        },
+
+        injectSchemaMarkup() {
+            const schemas = this.generateSchemas();
+            
+            // حقن كل Schema في عنصره المخصص
+            const schemaElements = {
+                'schema-organization': schemas[0],
+                'schema-website': schemas[1],
+                'schema-itemlist': schemas[2]
+            };
+
+            Object.entries(schemaElements).forEach(([id, schema]) => {
+                const element = document.getElementById(id);
+                if (element && schema) {
+                    element.textContent = JSON.stringify(schema, null, 2);
+                }
+            });
+        },
+
+        generateSchemas() {
+            const config = SEO_CONFIG;
+            const channels = CHANNELS_DATA.channels || [];
+            const schemas = [];
+
+            // 1. Organization Schema
+            schemas.push({
+                '@context': 'https://schema.org',
+                '@type': 'Organization',
+                'name': config.organization.name,
+                'alternateName': config.organization.nameEn,
+                'url': config.site.url,
+                'logo': config.site.logo,
+                'description': config.meta.description,
+                'foundingDate': config.organization.foundingDate,
+                'sameAs': config.organization.sameAs,
+                'contactPoint': {
+                    '@type': 'ContactPoint',
+                    'contactType': 'customer service',
+                    'url': config.organization.contactUrl,
+                    'availableLanguage': 'Arabic'
+                }
+            });
+
+            // 2. WebSite Schema
+            schemas.push({
+                '@context': 'https://schema.org',
+                '@type': 'WebSite',
+                'name': config.site.name,
+                'alternateName': config.site.nameEn,
+                'url': config.site.url,
+                'description': config.meta.description,
+                'inLanguage': config.site.language,
+                'publisher': {
+                    '@type': 'Organization',
+                    'name': config.organization.name
+                }
+            });
+
+            // 3. ItemList Schema (قائمة القنوات)
+            if (channels.length > 0) {
+                const itemListElements = channels.map((channel, index) => ({
+                    '@type': 'ListItem',
+                    'position': index + 1,
+                    'item': {
+                        '@type': 'Organization',
+                        'name': channel.name,
+                        'url': channel.url,
+                        'description': channel.description
+                    }
+                }));
+
+                schemas.push({
+                    '@context': 'https://schema.org',
+                    '@type': 'ItemList',
+                    'name': 'أفضل القنوات التقنية العربية على تليغرام',
+                    'description': 'قائمة مختارة بعناية تضم أفضل القنوات التقنية العربية الملتزمة',
+                    'numberOfItems': channels.length,
+                    'itemListElement': itemListElements
+                });
+            }
+
+            return schemas;
+        }
+    };
+
+    /**
+     * وحدة عرض القنوات (Channels Renderer Module)
+     * المسؤولية: توليد بطاقات القنوات من البيانات المضمنة في channels-data.js
+     */
+    const ChannelsRenderer = {
+        init() {
+            this.channelsList = document.querySelector('.channels-list');
+            this.specialLinkContainer = document.querySelector('.special-link-container');
+            
+            if (!this.channelsList) return;
+
+            // التحقق من وجود البيانات
+            if (typeof CHANNELS_DATA === 'undefined') {
+                return;
+            }
+
+            this.updateSpecialLink();
+            this.renderChannels();
+        },
+
+        updateSpecialLink() {
+            if (!this.specialLinkContainer || !CHANNELS_DATA.addAllLink) return;
+            
+            const link = this.specialLinkContainer.querySelector('.special-link');
+            if (link) link.href = CHANNELS_DATA.addAllLink;
+        },
+
+        renderChannels() {
+            const channels = CHANNELS_DATA.channels;
+            
+            if (!channels || !channels.length) {
+                this.channelsList.innerHTML = '<li class="no-channels">لا توجد قنوات متاحة حالياً</li>';
+                return;
+            }
+
+            this.channelsList.innerHTML = channels.map(channel => this.createChannelCard(channel)).join('');
+        },
+
+        createChannelCard(channel) {
+            // تحويل \n إلى <br> للأوصاف متعددة الأسطر
+            const formattedDescription = channel.description.replace(/\n/g, '<br>');
+            
+            return `
+                <li class="channel-card">
+                    <div class="channel-header">
+                        <a href="${channel.url}" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="channel-link">
+                            ${channel.name}
+                        </a>
+                        <button class="toggle-btn" 
+                                aria-label="إظهار الوصف"
+                                aria-expanded="false">
+                            +
+                        </button>
+                    </div>
+                    <div class="channel-description">
+                        <p>${formattedDescription}</p>
+                    </div>
+                </li>
+            `;
+        }
+    };
 
     /**
      * وحدة إدارة التنقل (Navigation Module)
@@ -219,20 +381,18 @@
      * تُنفَّذ عند اكتمال تحميل DOM
      */
     function initializeApp() {
-        try {
-            // تهيئة جميع الوحدات
-            NavigationController.init();
-            ChannelsController.init();
-            VisualEffectsController.init();
-            SmoothScrollController.init();
-            PerformanceController.init();
-            
-            // تسجيل نجاح التهيئة (يمكن حذفه في الإنتاج)
-            console.log('✅ تم تهيئة التطبيق بنجاح');
-        } catch (error) {
-            // التعامل مع الأخطاء بشكل آمن (Fail Fast & Safe)
-            console.error('❌ خطأ في تهيئة التطبيق:', error);
-        }
+        // توليد السيو الديناميكي أولاً
+        DynamicSEO.init();
+        
+        // عرض القنوات من البيانات المضمنة
+        ChannelsRenderer.init();
+        
+        // تهيئة باقي الوحدات
+        NavigationController.init();
+        ChannelsController.init();
+        VisualEffectsController.init();
+        SmoothScrollController.init();
+        PerformanceController.init();
     }
 
     // الانتظار حتى اكتمال تحميل DOM

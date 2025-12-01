@@ -1,0 +1,9 @@
+# robots.txt - مبادرة رباط التقنية
+# https://alzanad.github.io/ribat-altaqniyyah/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://alzanad.github.io/ribat-altaqniyyah/sitemap.xml
+

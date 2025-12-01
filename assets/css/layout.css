@@ -1,0 +1,279 @@
+/**
+ * layout.css
+ * ─────────────────────────────────────────────────────────────────────────────
+ * التخطيط والبنية العامة
+ * الحاويات، الشبكات، الأقسام الهيكلية
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   الحاوية الرئيسية
+   ═══════════════════════════════════════════════════════════════════════════ */
+.container {
+    max-width: var(--max-width-content);
+    margin: var(--spacing-xl) auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   شريط التنقل
+   ═══════════════════════════════════════════════════════════════════════════ */
+.navbar {
+    background: var(--color-bg-card);
+    border-bottom: 2px solid var(--color-primary);
+    padding: var(--spacing-sm) 0;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-fixed);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: all var(--transition-normal);
+}
+
+.nav-logo:hover {
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.nav-logo::before {
+    content: '✦';
+    font-size: 1.6rem;
+    animation: pulse 2s infinite;
+}
+
+.nav-menu {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.nav-link {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--color-primary-light);
+    background: rgba(201, 162, 39, 0.1);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* قائمة الجوال */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    transition: all var(--transition-normal);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   القسم البطولي (Hero)
+   ═══════════════════════════════════════════════════════════════════════════ */
+.hero {
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    background: linear-gradient(
+        145deg, 
+        rgba(201, 162, 39, 0.12) 0%, 
+        rgba(45, 138, 110, 0.08) 50%,
+        rgba(201, 162, 39, 0.05) 100%
+    );
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+}
+
+/* تأثير التوهج الخلفي */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(201, 162, 39, 0.1) 0%,
+        transparent 50%
+    );
+    pointer-events: none;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+}
+
+.hero-title::after {
+    content: '_';
+    display: inline-block;
+    animation: blink 1s step-end infinite;
+    color: var(--color-accent);
+}
+
+.hero-subtitle {
+    font-size: var(--text-xl);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   الأقسام العامة
+   ═══════════════════════════════════════════════════════════════════════════ */
+.section-title {
+    font-size: var(--text-3xl);
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-accent);
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    display: inline-block;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   قسم القنوات
+   ═══════════════════════════════════════════════════════════════════════════ */
+.channels-section {
+    margin: var(--spacing-xl) 0;
+}
+
+.channels-list {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   قسم شروط الانضمام
+   ═══════════════════════════════════════════════════════════════════════════ */
+.conditions-section {
+    background: var(--color-bg-card);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-lg);
+}
+
+.conditions-section .section-title {
+    color: var(--color-primary-light);
+}
+
+.conditions-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   قسم "عن المبادرة"
+   ═══════════════════════════════════════════════════════════════════════════ */
+.about-section {
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-lg);
+    background: linear-gradient(
+        145deg, 
+        rgba(201, 162, 39, 0.08) 0%, 
+        rgba(45, 138, 110, 0.05) 100%
+    );
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+}
+
+.about-section p {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    font-size: var(--text-lg);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   التذييل (Footer)
+   ═══════════════════════════════════════════════════════════════════════════ */
+.footer {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg) 0;
+    border-top: 2px solid var(--color-border);
+    text-align: center;
+}
+
+.footer p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer a {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: var(--text-xl);
+    transition: all var(--transition-fast);
+    display: inline-block;
+}
+
+.footer a:hover {
+    color: var(--color-accent);
+    transform: scale(1.1);
+}

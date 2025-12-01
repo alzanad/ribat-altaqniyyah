@@ -1,0 +1,25 @@
+{
+  "name": "رِباط التقنية",
+  "short_name": "رِباط",
+  "description": "دليل أفضل القنوات التقنية العربية على تليغرام",
+  "start_url": "/ribat-altaqniyyah/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#c9a227",
+  "orientation": "portrait-primary",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/WNwSnQKM/photo-2025-08-04-19-43-23.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.ibb.co/WNwSnQKM/photo-2025-08-04-19-43-23.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "categories": ["education", "technology"]
+}

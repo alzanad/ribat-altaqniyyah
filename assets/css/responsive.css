@@ -1,0 +1,190 @@
+/**
+ * responsive.css
+ * ─────────────────────────────────────────────────────────────────────────────
+ * التجاوب مع الشاشات المختلفة
+ * نقاط الانكسار: 768px (جوال)، 1024px (لوحي)، 1200px+ (سطح المكتب)
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   الشاشات المتوسطة (أقل من 1024px)
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .hero {
+        padding: var(--spacing-xl) var(--spacing-sm);
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   الهواتف والأجهزة الصغيرة (أقل من 768px)
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    /* التنقل في الجوال */
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 60px;
+        flex-direction: column;
+        background: var(--color-bg-card);
+        width: 100%;
+        padding: var(--spacing-md) 0;
+        box-shadow: var(--shadow-lg);
+        transition: right var(--transition-normal);
+        border-top: 1px solid var(--color-border);
+        z-index: var(--z-dropdown);
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu .nav-link {
+        display: block;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: 0;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    /* القسم البطولي */
+    .hero {
+        padding: var(--spacing-lg) var(--spacing-sm);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .hero-title {
+        font-size: var(--text-2xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--text-base);
+    }
+    
+    /* الرابط المميز */
+    .special-link {
+        font-size: var(--text-base);
+        padding: var(--spacing-sm) var(--spacing-md);
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    /* عناصر الشروط */
+    .condition-item {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .condition-number {
+        font-size: var(--text-xl);
+    }
+    
+    /* قسم الشروط */
+    .conditions-section {
+        padding: var(--spacing-md);
+    }
+    
+    /* قسم عن المبادرة */
+    .about-section {
+        padding: var(--spacing-md);
+    }
+    
+    .about-section p {
+        font-size: var(--text-base);
+    }
+    
+    /* عناوين الأقسام */
+    .section-title {
+        font-size: var(--text-2xl);
+    }
+    
+    /* بطاقات القنوات */
+    .channel-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .channel-link {
+        font-size: var(--text-lg);
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   الشاشات الصغيرة جداً (أقل من 480px)
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        margin: var(--spacing-md) auto;
+    }
+    
+    .nav-logo {
+        font-size: var(--text-xl);
+    }
+    
+    .nav-logo::before {
+        font-size: 1.3rem;
+    }
+    
+    .hero-title {
+        font-size: var(--text-xl);
+    }
+    
+    .special-link::after {
+        content: none; /* إزالة السهم في الشاشات الصغيرة */
+    }
+    
+    .footer a {
+        font-size: var(--text-lg);
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   تفضيلات المستخدم: تقليل الحركة
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   الطباعة
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media print {
+    .navbar,
+    .hamburger,
+    .special-link-container,
+    .toggle-btn {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .hero,
+    .channel-card,
+    .conditions-section,
+    .about-section {
+        border: 1px solid #ccc;
+        box-shadow: none;
+        background: white;
+    }
+    
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+}
