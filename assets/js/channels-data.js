@@ -81,6 +81,11 @@ const CHANNELS_DATA = {
             url: "https://t.me/from_idea_to_app",
             description: "من فكرة إلى تطبيق | نحول فكرتك إلى مشروع رقمي ناجح."
         },
+        {
+            name: "حَامِد | tech",
+            url: "https://t.me/hmdtech",
+            description: "محتوى تقني متنوع"
+        },
 
     ]
 };
