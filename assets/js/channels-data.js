@@ -67,11 +67,6 @@ const CHANNELS_DATA = {
             description: "مقتطفات حاسوبية، تهم المبرمجين والمصممين وطلبة الحاسوب."
         },
         {
-            name: "AI Tools Hub | ذكاء اصطناعي مجاناً",
-            url: "https://t.me/AiTools6",
-            description: "بوابتك المجانية لعالم الذكاء الاصطناعي."
-        },
-        {
             name: "IT Spark⚡️",
             url: "https://t.me/IT_Spark",
             description: "سَتجد كل المعلومات والأخبار التي تَخص المجال التقني والتكنولوجي والبرمجي في آنٍ واحد ⚡️"
