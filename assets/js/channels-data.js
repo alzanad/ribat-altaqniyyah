@@ -72,11 +72,6 @@ const CHANNELS_DATA = {
             description: "سَتجد كل المعلومات والأخبار التي تَخص المجال التقني والتكنولوجي والبرمجي في آنٍ واحد ⚡️"
         },
         {
-            name: "من فكرة إلى تطبيق",
-            url: "https://t.me/from_idea_to_app",
-            description: "من فكرة إلى تطبيق | نحول فكرتك إلى مشروع رقمي ناجح."
-        },
-        {
             name: "حَامِد | tech",
             url: "https://t.me/hmdtech",
             description: "محتوى تقني متنوع"
