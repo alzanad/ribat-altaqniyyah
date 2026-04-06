@@ -76,6 +76,12 @@ const CHANNELS_DATA = {
             url: "https://t.me/hmdtech",
             description: "محتوى تقني متنوع"
         },
+        {
+            name: "Yaman - Dev Notes",
+            url: "https://t.me/yaman_khatib",
+            description: "مشاركة رحلتي كمطور."
+        },
+
 
     ]
 };
