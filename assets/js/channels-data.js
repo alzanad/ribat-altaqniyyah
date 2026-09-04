@@ -22,11 +22,6 @@ const CHANNELS_DATA = {
             description: "ثقافة برمجية بحته، ومصادر تعليمية باللغة العربية."
         },
         {
-            name: "مستودع تقني",
-            url: "https://t.me/sunni_tech",
-            description: "قناة تقنية مخصصة لأهل السنة، لمشاركة التطبيقات والأدوات المفيدة."
-        },
-        {
             name: "المهند - مساحة تقنية",
             url: "https://t.me/almuhanad_tech",
             description: "مهندس برمجيات ومطور ويب متكامل شغوف بالتقنية."
@@ -55,11 +50,6 @@ const CHANNELS_DATA = {
             name: "محمود نصر الدين",
             url: "https://t.me/Mahmoud_Nasredeen",
             description: "محتوى عن التقنية والإنتاجية وأشياء أخرى."
-        },
-        {
-            name: "دوبــاكــود",
-            url: "https://t.me/DopaCode",
-            description: "أدوات ومصادر تعليمية مجانية، شروحات مبسّطة، أفكار تقنية جديدة."
         },
         {
             name: "01",
